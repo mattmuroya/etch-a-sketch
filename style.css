@@ -45,18 +45,31 @@ button {
 }
 
 button:hover {
-  background-color: #cf3030;
+  background-color: #777;
   color: #fff;
 }
 
 button:active {
-  background-color: #660b0b;
+  background-color: #444;
   color: #fff;
 }
 
 .color-picker {
-  width: 100px;
-  height: 50px;
+  display: none;
+}
+
+.color-picker-mask {
+  box-sizing: border-box;
+  border: 8px solid #eee;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  display: block;
+}
+
+.color-picker-mask:hover {
+  border: none;
 }
 
 /* The slider itself */
@@ -75,34 +88,34 @@ button:active {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
   border-radius: 4px;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #444; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 25px;
+  height: 25px;
+  background: #d7d7d7;
+  cursor: pointer; 
 }
 
 .slider::-webkit-slider-thumb:hover {
-  background-color: #cf3030;
+  background-color: #777;
 }
 
 .slider::-webkit-slider-thumb:active {
-  background-color: #660b0b;
+  background-color: #444;
 }
 
 .slider::-moz-range-thumb {
   border-radius: 4px;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: #444; /* Green background */
+  background: #d7d7d7; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb:hover {
-  background-color: #cf3030;
+  background-color: #777;
 }
 
 .slider::-moz-range-thumb:active {
-  background-color: #660b0b;
+  background-color: #444;
 }
 
 .size-indicator {

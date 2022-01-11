@@ -5,6 +5,14 @@ slider.value = 16;
 const colorPicker = document.querySelector('.color-picker');
 colorPicker.value = '#444444'; // initialize defaul on reload
 
+const colorPickerMask = document.querySelector('.color-picker-mask');
+const colorIndicator = document.querySelector('.color-indicator');
+colorPickerMask.style['background-color'] = colorPicker.value; // initialize
+colorPicker.addEventListener('input', () => {
+  colorIndicator.textContent = colorPicker.value;
+  colorPickerMask.style['background-color'] = colorPicker.value;
+});
+
 // draw the grid
 const grid = document.querySelector('.grid');
 function drawCells(size) {
