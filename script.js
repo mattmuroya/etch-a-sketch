@@ -1,5 +1,9 @@
 const slider = document.querySelector('.slider');
-slider.value = 32;
+slider.value = 16;
+
+// pick color
+const colorPicker = document.querySelector('.color-picker');
+colorPicker.value = '#444444'; // initialize defaul on reload
 
 // draw the grid
 const grid = document.querySelector('.grid');
@@ -8,6 +12,7 @@ function drawCells(size) {
     const cell = document.createElement('div');
     cell.classList.add('grid-cell');
     cell.style.cssText = `width:${100/size}%; height:${100/size}%`;
+    cell.draggable = false;
     grid.appendChild(cell);
   }
   //console.log(`${size}x${size} cells drawn at ${100/size}% each`);
@@ -15,13 +20,20 @@ function drawCells(size) {
 drawCells(slider.value);
 
 // make cells active on hover
-function makeCellsListen() {
+function makeCellsListen(color) {
   const gridCells = document.querySelectorAll('.grid-cell')
   gridCells.forEach((cell) => {
     //console.log('im listening!');
-    cell.addEventListener('mouseover', () => {
-      cell.classList.add('active');
+    cell.addEventListener('mouseover', (e) => {
+      //cell.classList.add('active');
+      //console.log(e.buttons);
+      if (e.buttons === 1) {
+        cell.style.cssText += `background-color: ${colorPicker.value};`;
+      }
     });
+    cell.addEventListener('mousedown', () => {
+      cell.style.cssText += `background-color: ${colorPicker.value};`;
+    })
   });
   //console.log('cells listening');
 }
@@ -33,21 +45,23 @@ resetBtn.addEventListener('click', resetCells);
 function resetCells() {
   const gridCells = document.querySelectorAll('.grid-cell')
   gridCells.forEach((cell) => {
-    cell.classList.remove('active');
+    //cell.classList.remove('active');
+    cell.style['background-color'] = null;
   });
 }
 
 // read slider and change size
 const sizeIndicator = document.querySelector('.size-indicator');
-slider.addEventListener('input', (e) => {
+sizeIndicator.textContent = '16 x 16'; // initialize on first load
+slider.addEventListener('input', () => {
   clearGrid();
-  drawCells(e.target.value);
+  drawCells(slider.value);
   sizeIndicator.textContent = slider.value + ' x ' + slider.value;
   //console.log(`slider changed to ${e.target.value}`);
 });
 
 // makeCellsListen called separately to improve performance
-slider.addEventListener('mouseup', (e) => {
+slider.addEventListener('mouseup', () => {
   makeCellsListen();
 });
 

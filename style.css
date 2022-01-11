@@ -36,10 +36,10 @@ body {
 
 button {
   flex: 0 0 auto;
-  padding: 16px;
   border-radius: 8px;
   border: none;
   width: 100px;
+  height: 50px;
   background-color: #d7d7d7;
   cursor: pointer;
 }
@@ -54,8 +54,9 @@ button:active {
   color: #fff;
 }
 
-.slider-container {
-  display: flex;
+.color-picker {
+  width: 100px;
+  height: 50px;
 }
 
 /* The slider itself */
@@ -105,7 +106,7 @@ button:active {
 }
 
 .size-indicator {
-  margin: 0;
+  margin: -8px 0 0 0;
   padding: 0;
 }
 
