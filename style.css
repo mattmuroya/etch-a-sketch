@@ -1,0 +1,94 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #eee;
+  font-family: Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #444;
+}
+
+.header {
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  /* font-family: 'Cedarville Cursive', cursive; */
+  font-size: 48px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  flex: 1 1 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 16px;
+  border-radius: 8px;
+  width: 100px;
+  background-color: #d7d7d7;
+  transition: 0.1s;
+  border: none;
+}
+
+button:hover {
+  background-color: #cf3030;
+  color: #fff;
+  border: none;
+}
+
+button:active {
+  background-color: #660b0b;
+  color: #fff;
+}
+
+.grid {
+  flex: 0 0 auto;
+  background-color: #fff;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-margin {
+  flex: 1 1 100px;
+}
+
+.grid-cell {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  width: 6.25%;
+  height: 6.25%;
+  transition: 0.1s;
+}
+
+.active {
+  background-color: #444;
+  border: none;
+}
+
+@media screen and (max-width: 900px) {
+  .grid {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    width: 300px;
+    height: 300px;
+  }
+}
