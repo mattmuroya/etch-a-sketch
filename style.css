@@ -25,31 +25,79 @@ body {
 }
 
 .controls {
-  flex: 1 1 100px;
+  height: 600px;
+  flex: 1 1 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 48px;
 }
 
 button {
+  flex: 0 0 auto;
   padding: 16px;
   border-radius: 8px;
+  border: none;
   width: 100px;
   background-color: #d7d7d7;
-  transition: 0.1s;
-  border: none;
+  cursor: pointer;
 }
 
 button:hover {
   background-color: #cf3030;
   color: #fff;
-  border: none;
 }
 
 button:active {
   background-color: #660b0b;
   color: #fff;
+}
+
+/* The slider itself */
+.slider {
+  flex: 0 0 auto;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 160px; /* Full-width */
+  height: 8px; /* Specified height */
+  background: #d7d7d7; /* Grey background */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  border-radius: 4px;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #444; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background-color: #cf3030;
+}
+
+.slider::-webkit-slider-thumb:active {
+  background-color: #660b0b;
+}
+
+.slider::-moz-range-thumb {
+  border-radius: 4px;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #444; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb:hover {
+  background-color: #cf3030;
+}
+
+.slider::-moz-range-thumb:active {
+  background-color: #660b0b;
 }
 
 .grid {
@@ -61,22 +109,19 @@ button:active {
   flex-wrap: wrap;
 }
 
-.right-margin {
-  flex: 1 1 100px;
-}
-
 .grid-cell {
   flex: 0 0 auto;
   box-sizing: border-box;
   border: 1px solid #eee;
-  width: 6.25%;
-  height: 6.25%;
-  transition: 0.1s;
 }
 
 .active {
   background-color: #444;
   border: none;
+}
+
+.right-margin {
+  flex: 1 1 200px;
 }
 
 @media screen and (max-width: 900px) {
