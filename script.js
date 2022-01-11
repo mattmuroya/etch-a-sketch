@@ -9,7 +9,7 @@ const colorPickerMask = document.querySelector('.color-picker-mask');
 const colorIndicator = document.querySelector('.color-indicator');
 colorPickerMask.style['background-color'] = colorPicker.value; // initialize
 colorPicker.addEventListener('input', () => {
-  colorIndicator.textContent = colorPicker.value;
+  colorIndicator.textContent = colorPicker
   colorPickerMask.style['background-color'] = colorPicker.value;
 });
 
@@ -36,11 +36,11 @@ function makeCellsListen(color) {
       //cell.classList.add('active');
       //console.log(e.buttons);
       if (e.buttons === 1) {
-        cell.style.cssText += `background-color: ${colorPicker.value};`;
+        cell.style.cssText += `background-color: ${colorPicker.value}; border: none;`;
       }
     });
     cell.addEventListener('mousedown', () => {
-      cell.style.cssText += `background-color: ${colorPicker.value};`;
+      cell.style.cssText += `background-color: ${colorPicker.value}; border: none;`;
     })
   });
   //console.log('cells listening');
@@ -55,6 +55,7 @@ function resetCells() {
   gridCells.forEach((cell) => {
     //cell.classList.remove('active');
     cell.style['background-color'] = null;
+    cell.style['border'] = null;
   });
 }
 

@@ -25,11 +25,11 @@ body {
 }
 
 .controls {
-  height: 600px;
+  height: 700px;
   flex: 1 1 200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 48px;
 }
