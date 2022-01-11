@@ -1,4 +1,5 @@
 const slider = document.querySelector('.slider');
+slider.value = 32;
 
 // draw the grid
 const grid = document.querySelector('.grid');
@@ -37,13 +38,20 @@ function resetCells() {
 }
 
 // read slider and change size
-slider.addEventListener('mouseup', (e) => {
+const sizeIndicator = document.querySelector('.size-indicator');
+slider.addEventListener('input', (e) => {
   clearGrid();
   drawCells(e.target.value);
-  makeCellsListen();
+  sizeIndicator.textContent = slider.value + ' x ' + slider.value;
   //console.log(`slider changed to ${e.target.value}`);
 });
 
+// makeCellsListen called separately to improve performance
+slider.addEventListener('mouseup', (e) => {
+  makeCellsListen();
+});
+
+// helper function to clear grid for resizing
 function clearGrid() {
   const gridCells = document.querySelectorAll('.grid-cell')
   gridCells.forEach((cell) => {
