@@ -9,7 +9,7 @@ const colorPickerMask = document.querySelector('.color-picker-mask');
 const colorIndicator = document.querySelector('.color-indicator');
 colorPickerMask.style['background-color'] = colorPicker.value; // initialize
 colorPicker.addEventListener('input', () => {
-  colorIndicator.textContent = colorPicker
+  colorIndicator.textContent = colorPicker.value;
   colorPickerMask.style['background-color'] = colorPicker.value;
 });
 
