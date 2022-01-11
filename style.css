@@ -126,8 +126,8 @@ button:active {
 .grid {
   flex: 0 0 auto;
   background-color: #fff;
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   display: flex;
   flex-wrap: wrap;
 }
